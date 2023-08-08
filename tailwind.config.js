@@ -9,6 +9,7 @@ export default {
     colors: {
       'black': '#121212',
       'white': '#f6f6f6',
+      'gray' : '#242424'
     },
   },
   plugins: [],
