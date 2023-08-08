@@ -1,13 +1,15 @@
 type ButtonProps = {
   content: string;
-  color: string;
-  bgColor: string;
+  color?: string;
+  back?: string;
+  px: number;
+  py: number;
 };
 
-export default function Button({ content, color, bgColor }: ButtonProps) {
+export default function Button({ content, color, back, px, py }: ButtonProps) {
   return (
     <button
-      className={`border rounded-full py-1 px-5 text-${color} bg-${bgColor}-500`}
+      className={`rounded-full text-${color} bg-${back} px-${px} py-${py} `}
     >
       {content}
     </button>
