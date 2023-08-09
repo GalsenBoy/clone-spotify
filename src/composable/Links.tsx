@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 type LinkProps = {
   content: string;
   to: string;
-  className: string;
+  className?: string;
 };
 export default function Link({ content, to, className }: LinkProps) {
   return (
