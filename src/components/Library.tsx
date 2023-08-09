@@ -3,7 +3,7 @@ import Icon from "../composable/Icon";
 
 export default function Library() {
   return (
-    <div className="max-w-xs bg-black border">
+    <section className="max-w-xs bg-black border">
       <div className="flex justify-between p-2">
         <div className="flex gap-2">
           <Icon name="Library" color="red" size={24} />
@@ -26,6 +26,6 @@ export default function Library() {
           className="mt-5"
         />
       </div>
-    </div>
+    </section>
   );
 }
