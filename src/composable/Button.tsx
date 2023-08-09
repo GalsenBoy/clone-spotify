@@ -1,17 +1,8 @@
 type ButtonProps = {
   content: string;
-  color?: string;
-  back?: string;
-  px: number;
-  py: number;
+  className?: string;
 };
 
-export default function Button({ content, color, back, px, py }: ButtonProps) {
-  return (
-    <button
-      className={`rounded-full text-${color} bg-${back} px-${px} py-${py} `}
-    >
-      {content}
-    </button>
-  );
+export default function Button({ content, className }: ButtonProps) {
+  return <button className={className}>{content}</button>;
 }
