@@ -5,7 +5,7 @@ import Link from "../composable/Links";
 
 export default function Confidential() {
   return (
-    <section className="max-w-xs p-6">
+    <section className="max-w-xs p-6 bg-black rounded-b-md">
       <ConfigChild
         content="Légal"
         to="/legal"
