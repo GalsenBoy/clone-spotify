@@ -1,10 +1,10 @@
-import Button from "../composable/Button";
+import Discover from "../composable/Discover";
 import Icon from "../composable/Icon";
 
 export default function Library() {
   return (
-    <div className="max-w-xs p-2 bg-black border">
-      <div className="flex justify-between ">
+    <div className="max-w-xs bg-black border">
+      <div className="flex justify-between p-2">
         <div className="flex gap-2">
           <Icon name="Library" color="red" size={24} />
           <span>Bibliothèque</span>
@@ -13,20 +13,16 @@ export default function Library() {
           <Icon name="Plus" color="red" size={24} />
         </div>
       </div>
-      <div>
-        <p className="font-bold pt-2">Créez votre première playlist</p>
-        <p className="text-xs font-bold pt-2 pb-2 ">
-          C'est simple, nous allons vous aider
-        </p>
-        <Button
-          color="black"
-          back="white"
-          px={4}
-          py={1}
-          content="Créer une playlist"
-        />
-      </div>
-      <div></div>
+      <Discover
+        title="Créer votre première playlist"
+        subtitle="C'est simple, nous allons vous aider"
+        buttonContent="Créer une playlist"
+      />
+      <Discover
+        title="Cherchons quelques podcasts auxquels vous abonner"
+        subtitle="Nous vous transmettrons des informations sur les nouveaux épisodes"
+        buttonContent="Parcourir les podscasts"
+      />
     </div>
   );
 }
