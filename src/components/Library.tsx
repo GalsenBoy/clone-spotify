@@ -13,16 +13,19 @@ export default function Library() {
           <Icon name="Plus" color="red" size={24} />
         </div>
       </div>
-      <Discover
-        title="Créer votre première playlist"
-        subtitle="C'est simple, nous allons vous aider"
-        buttonContent="Créer une playlist"
-      />
-      <Discover
-        title="Cherchons quelques podcasts auxquels vous abonner"
-        subtitle="Nous vous transmettrons des informations sur les nouveaux épisodes"
-        buttonContent="Parcourir les podscasts"
-      />
+      <div className="h-48 overflow-auto mt-3">
+        <Discover
+          title="Créer votre première playlist"
+          subtitle="C'est simple, nous allons vous aider"
+          buttonContent="Créer une playlist"
+        />
+        <Discover
+          title="Cherchons quelques podcasts auxquels vous abonner"
+          subtitle="Nous vous transmettrons des informations sur les nouveaux épisodes"
+          buttonContent="Parcourir les podscasts"
+          className="mt-5"
+        />
+      </div>
     </div>
   );
 }
