@@ -4,7 +4,7 @@ import Library from "../components/Library";
 
 export default function Aside() {
   return (
-    <aside>
+    <aside className="bg-dark">
       <Explore />
       <Library />
       <Confidential />

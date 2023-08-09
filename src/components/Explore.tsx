@@ -4,7 +4,7 @@ import Icon from "../composable/Icon";
 
 export default function Explore() {
   return (
-    <section className="flex flex-col p-2 max-w-xs border rounded-md bg-black gap-2 ">
+    <section className="flex flex-col p-2 max-w-xs rounded-md bg-black gap-2 ">
       <div className="flex gap-5 py-2">
         <Icon name="Home" color="red" size={24} />
         <Link to="/home" content="Accueil" />
