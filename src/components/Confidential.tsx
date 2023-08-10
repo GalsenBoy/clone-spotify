@@ -2,6 +2,7 @@ import Button from "../composable/Button";
 import ConfigChild from "../composable/ConfigChild";
 import Icon from "../composable/Icon";
 import Link from "../composable/Links";
+// import { Button, ConfigChild, Icon, Link } from "../composable";
 
 export default function Confidential() {
   const configData = [

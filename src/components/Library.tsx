@@ -18,7 +18,7 @@ export default function Library() {
   ];
   return (
     <section className="max-w-xs bg-black ">
-      <div className="flex justify-between p-2">
+      <div className="flex justify-between p-5">
         <div className="flex gap-2">
           <Icon name="Library" color="red" size={24} />
           <span>Bibliothèque</span>
