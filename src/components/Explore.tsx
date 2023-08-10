@@ -20,7 +20,7 @@ export default function Explore() {
     },
   ];
   return (
-    <section className="flex flex-col py-2 pl-6 max-w-xs rounded-md bg-black gap-2 mb-2">
+    <section className="flex flex-col py-2 pl-6 max-w-md rounded-md bg-black gap-2 mb-2">
       {exploreData.map((item) => (
         <div className="flex gap-5 py-2">
           <Icon name={item.name} color={item.color} size={item.size} />

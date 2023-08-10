@@ -26,7 +26,7 @@ export default function Confidential() {
     },
   ];
   return (
-    <section className="max-w-xs p-6 bg-black rounded-b-md  max-h-64">
+    <section className="max-w-md p-6 bg-black rounded-b-md  max-h-64">
       {configData.map((item, index) => (
         <ConfigChild
           key={index}

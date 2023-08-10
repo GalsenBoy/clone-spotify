@@ -1,6 +1,5 @@
 import Confidential from "./Confidential";
 import Explore from "./Explore";
-import Footer from "./Footer";
 import Library from "./Library";
 
 export default function Aside() {
@@ -9,7 +8,6 @@ export default function Aside() {
       <Explore />
       <Library />
       <Confidential />
-      <Footer />
     </aside>
   );
 }
