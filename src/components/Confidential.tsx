@@ -2,6 +2,7 @@ import Button from "../composable/Button";
 import ConfigChild from "../composable/ConfigChild";
 import Icon from "../composable/Icon";
 import Link from "../composable/Links";
+// import { Button, ConfigChild, Icon, Link } from "../composable";
 
 export default function Confidential() {
   const configData = [
@@ -25,7 +26,7 @@ export default function Confidential() {
     },
   ];
   return (
-    <section className="max-w-xs p-6 bg-black rounded-b-md  max-h-64">
+    <section className="max-w-md p-6 bg-black rounded-b-md  max-h-64">
       {configData.map((item, index) => (
         <ConfigChild
           key={index}
