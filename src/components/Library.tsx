@@ -2,6 +2,20 @@ import Discover from "../composable/Discover";
 import Icon from "../composable/Icon";
 
 export default function Library() {
+  const libraryData = [
+    {
+      title: "Créer votre première playlist",
+      subtitle: "C'est simple, nous allons vous aider",
+      buttonContent: "Créer une playlist",
+    },
+    {
+      title: "Cherchons quelques podcasts auxquels vous abonner",
+      subtitle:
+        "Nous vous transmettrons des informations sur les nouveaux épisodes",
+      buttonContent: "Parcourir les podscasts",
+      className: "my-5",
+    },
+  ];
   return (
     <section className="max-w-xs bg-black ">
       <div className="flex justify-between p-2">
@@ -14,17 +28,15 @@ export default function Library() {
         </div>
       </div>
       <div className="h-49 overflow-auto mt-3">
-        <Discover
-          title="Créer votre première playlist"
-          subtitle="C'est simple, nous allons vous aider"
-          buttonContent="Créer une playlist"
-        />
-        <Discover
-          title="Cherchons quelques podcasts auxquels vous abonner"
-          subtitle="Nous vous transmettrons des informations sur les nouveaux épisodes"
-          buttonContent="Parcourir les podscasts"
-          className="my-5"
-        />
+        {libraryData.map((item, index) => (
+          <Discover
+            key={index}
+            title={item.title}
+            subtitle={item.subtitle}
+            buttonContent={item.buttonContent}
+            className={item.className}
+          />
+        ))}
       </div>
     </section>
   );
