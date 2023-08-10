@@ -14,7 +14,10 @@ export default {
       'black': '#121212',
       'white': '#f6f6f6',
       'gray-light' : '#242424',
-      'dark' :'#000000'
+      'dark' :'#000000',
+      'indigo':"#6366F1",
+      'purple':"#A855F7",
+      'pink':"#EC4899"
     },
   },
   plugins: [],
