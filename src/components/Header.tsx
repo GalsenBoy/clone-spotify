@@ -2,12 +2,12 @@ import Button from "../composable/Button";
 import Icon from "../composable/Icon";
 export default function Header() {
   return (
-    <header className="flex justify-between p-6 mt-2 rounded-md w-full">
+    <header className="flex justify-between bg-black p-6 my-2 mr-2 rounded-md w-full">
       <div className="flex">
         <Icon name="ChevronLeft" size={24} color={"red"} />
         <Icon name="ChevronRight" size={24} color={"red"} />
       </div>
-      <div>
+      <div className="space-x-2">
         <Button content="S'inscrire" />
         <Button
           content="Se connecter"

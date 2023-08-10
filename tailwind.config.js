@@ -8,7 +8,10 @@ export default {
     extend: {
       height: {
         '49': '12.5rem',
-      }
+      },
+      fontFamily: {
+        circular: ['"Circular"', 'sans-serif'],
+      },
     },
     colors: {
       'black': '#121212',
