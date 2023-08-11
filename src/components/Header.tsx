@@ -4,7 +4,7 @@ import Icon from "../composable/Icon";
 import axios from "axios";
 export default function Header() {
   const [data, setData] = useState({});
-  const clientId = import.meta.env.SPOTIFY_CLIENT_ID;
+  const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
   useEffect(() => {
     const fetchData = async () => {
