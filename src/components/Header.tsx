@@ -18,6 +18,7 @@ export default function Header() {
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+        console.log(clientId);
       }
     };
 
