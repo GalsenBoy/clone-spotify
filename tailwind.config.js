@@ -20,7 +20,8 @@ export default {
       'dark' :'#000000',
       'indigo':"#6366F1",
       'purple':"#A855F7",
-      'pink':"#EC4899"
+      'pink':"#EC4899",
+      'blackIcon' : '#0A0A0A',
     },
   },
   plugins: [],

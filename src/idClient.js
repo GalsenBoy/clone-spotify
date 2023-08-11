@@ -1,0 +1,1 @@
+export const idClient = "a678da92dd004bc08d6f63d8085dd2d7"
