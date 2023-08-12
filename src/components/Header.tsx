@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Button from "../composable/Button";
 import Icon from "../composable/Icon";
-import axios from "axios";
+// import axios from "axios";
 export default function Header() {
-  const [data, setData] = useState({});
-  const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  // const [data, setData] = useState({});
+  // const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
   const chevronData = [
     {
@@ -15,24 +15,24 @@ export default function Header() {
     },
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://api.spotify.com/v1/albums", {
-          headers: {
-            Authorization: clientId,
-          },
-        });
-        setData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        console.log(clientId);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get("https://api.spotify.com/v1/albums", {
+  //         headers: {
+  //           Authorization: clientId,
+  //         },
+  //       });
+  //       setData(response.data);
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       console.log(clientId);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <header className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full">
