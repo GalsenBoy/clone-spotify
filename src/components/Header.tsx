@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import Button from "../composable/Button";
 import Icon from "../composable/Icon";
 import axios from "axios";
+import Coran from "../interfaces/Coran";
 
 export default function Header() {
-  const [data, setData] = useState([]);
-  // const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  const [coran, setCoran] = useState<Array<Coran>>([]);
 
   const chevronData = [
     {
@@ -22,7 +22,7 @@ export default function Header() {
         const response = await axios.get(
           "https://mp3quran.net/api/v3/radios?language=eng"
         );
-        setData(response.data);
+        setCoran(response.data);
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -38,11 +38,11 @@ export default function Header() {
       className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full"
     >
       <div className="flex gap-2">
-        {chevronData.map((index, item) => (
+        {chevronData.map((item, index) => (
           <Icon
-            key={item}
+            key={index}
             className=" rounded-full bg-blackIcon"
-            name={index.name}
+            name={item.name}
             size={24}
             color={"red"}
           />
@@ -56,9 +56,17 @@ export default function Header() {
         />
       </div>
       <div>
-        {/* {data.map((dat, index) => {
-          return <li>{dat.native}</li>;
-        })} */}
+        {coran.length > 0 ? (
+          <div>
+            <ul className="text-white">
+              {coran.map((data, index) => (
+                <li key={index}>{data.name}</li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </header>
   );
