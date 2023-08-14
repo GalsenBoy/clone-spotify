@@ -5,7 +5,7 @@ import axios from "axios";
 import Coran from "../interfaces/Coran";
 
 export default function Header() {
-  const [coran, setCoran] = useState<Array<Coran>>([]);
+  const [coran, setCoran] = useState<{ radios: Coran[] }>({ radios: [] });
 
   const chevronData = [
     {
@@ -56,17 +56,13 @@ export default function Header() {
         />
       </div>
       <div>
-        {coran.length > 0 ? (
-          <div>
-            <ul className="text-white">
-              {coran.map((data, index) => (
-                <li key={index}>{data.name}</li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
+        <div>
+          <ul className="text-white">
+            {coran.radios.map((radio, index) => (
+              <li key={index}>{radio.name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </header>
   );
