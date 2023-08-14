@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Button from "../composable/Button";
 import Icon from "../composable/Icon";
 import axios from "axios";
+
 export default function Header() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   // const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
   const chevronData = [
@@ -19,10 +20,10 @@ export default function Header() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://mp3quran.net/api/v3/languages"
+          "https://mp3quran.net/api/v3/radios?language=eng"
         );
         setData(response.data);
-        console.log(response.data + "" + data);
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -53,6 +54,11 @@ export default function Header() {
           content="Se connecter"
           className="text-black bg-white py-2 px-5 rounded-full"
         />
+      </div>
+      <div>
+        {/* {data.map((dat, index) => {
+          return <li>{dat.native}</li>;
+        })} */}
       </div>
     </header>
   );
