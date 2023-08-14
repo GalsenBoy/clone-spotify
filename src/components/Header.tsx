@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Button from "../composable/Button";
 import Icon from "../composable/Icon";
 import axios from "axios";
+import Coran from "../interfaces/Coran";
+
 export default function Header() {
-  const [data, setData] = useState({});
-  // const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  const [coran, setCoran] = useState<{ radios: Coran[] }>({ radios: [] });
 
   const chevronData = [
     {
@@ -19,10 +20,10 @@ export default function Header() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://mp3quran.net/api/v3/languages"
+          "https://mp3quran.net/api/v3/radios?language=eng"
         );
-        setData(response.data);
-        console.log(response.data + "" + data);
+        setCoran(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -34,14 +35,14 @@ export default function Header() {
   return (
     <header
       style={{ gridRow: "-3/-1" }}
-      className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full"
+      className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full overflow-auto"
     >
       <div className="flex gap-2">
-        {chevronData.map((index, item) => (
+        {chevronData.map((item, index) => (
           <Icon
-            key={item}
+            key={index}
             className=" rounded-full bg-blackIcon"
-            name={index.name}
+            name={item.name}
             size={24}
             color={"red"}
           />
@@ -54,6 +55,11 @@ export default function Header() {
           className="text-black bg-white py-2 px-5 rounded-full"
         />
       </div>
+      <ul className="text-white">
+        {coran.radios.map((radio, index) => (
+          <li key={index}>{radio.name}</li>
+        ))}
+      </ul>
     </header>
   );
 }

@@ -13,7 +13,7 @@ export default function Home() {
         width: "100%",
         height: "100%",
         display: "grid",
-        gridTemplateColumns: "450px 1fr",
+        gridTemplateColumns: "380px 1fr",
         gridTemplateRows: "repeat(2,1fr)",
       }}
       className="bg-dark font-circular"
