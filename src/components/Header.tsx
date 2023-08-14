@@ -35,7 +35,10 @@ export default function Header() {
   // }, []);
 
   return (
-    <header className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full">
+    <header
+      style={{ gridRow: "-3/-1" }}
+      className="flex justify-between  bg-black p-6 my-2 mr-2 rounded-md w-full"
+    >
       <div className="flex gap-2">
         {chevronData.map((index, item) => (
           <Icon

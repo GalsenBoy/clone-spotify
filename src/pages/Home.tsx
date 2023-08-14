@@ -9,13 +9,17 @@ export default function Home() {
   return (
     <div
       onContextMenu={preventContextMenu}
-      style={{ width: "100%", height: "100%" }}
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "grid",
+        gridTemplateColumns: "repeat(2,1fr)",
+        gridTemplateRows: "repeat(2,1fr)",
+      }}
       className="bg-dark font-circular"
     >
-      <div className="flex">
-        <Aside />
-        <Header />
-      </div>
+      <Aside />
+      <Header />
       <Footer />
     </div>
   );

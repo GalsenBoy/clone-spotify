@@ -2,7 +2,10 @@ import Button from "../composable/Button";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between m-3 p-2 bg-gradient-to-r from-pink via-purple to-indigo">
+    <footer
+      style={{ gridRow: "3/-1", gridColumn: "-3/-1" }}
+      className="flex justify-between m-3 p-2 bg-gradient-to-r from-pink via-purple to-indigo"
+    >
       <div>
         <p>EXTRAIT SUR SPOTIFY</p>
         <p>
