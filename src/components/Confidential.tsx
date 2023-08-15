@@ -2,29 +2,10 @@ import Button from "../composable/Button";
 import ConfigChild from "../composable/ConfigChild";
 import Icon from "../composable/Icon";
 import Link from "../composable/Links";
+import { configData } from "../data/data";
 // import { Button, ConfigChild, Icon, Link } from "../composable";
 
 export default function Confidential() {
-  const configData = [
-    {
-      content: "Légal",
-      to: "/legal",
-      secondContent: "Centre de confidentialité",
-      secondTo: "/center",
-    },
-    {
-      content: "Protection des données",
-      to: "/protection",
-      secondContent: "Paramètres des cookies",
-      secondTo: "/cookie",
-    },
-    {
-      content: "A propos des pubs",
-      to: "/about",
-      secondContent: "Accessibilité",
-      secondTo: "/access",
-    },
-  ];
   return (
     <section className="p-6 bg-black rounded-b-md ">
       {configData.map((item, index) => (

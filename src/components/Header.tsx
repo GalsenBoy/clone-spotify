@@ -3,18 +3,10 @@ import Button from "../composable/Button";
 import Icon from "../composable/Icon";
 import axios from "axios";
 import Coran from "../interfaces/Coran";
+import { chevronData } from "../data/data";
 
 export default function Header() {
   const [coran, setCoran] = useState<{ radios: Coran[] }>({ radios: [] });
-
-  const chevronData = [
-    {
-      name: "ChevronLeft",
-    },
-    {
-      name: "ChevronRight",
-    },
-  ];
 
   useEffect(() => {
     const fetchData = async () => {

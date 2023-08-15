@@ -1,21 +1,8 @@
 import Discover from "../composable/Discover";
 import Icon from "../composable/Icon";
+import { libraryData } from "../data/data";
 
 export default function Library() {
-  const libraryData = [
-    {
-      title: "Créer votre première playlist",
-      subtitle: "C'est simple, nous allons vous aider",
-      buttonContent: "Créer une playlist",
-    },
-    {
-      title: "Cherchons quelques podcasts auxquels vous abonner",
-      subtitle:
-        "Nous vous transmettrons des informations sur les nouveaux épisodes",
-      buttonContent: "Parcourir les podscasts",
-      className: "my-5",
-    },
-  ];
   return (
     <section className=" bg-black ">
       <div className="flex justify-between p-5">
