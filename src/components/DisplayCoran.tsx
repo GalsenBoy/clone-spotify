@@ -7,11 +7,9 @@ type DisplayCoranProps = {
 
 export default function DisplayCoran({ radio, index }: DisplayCoranProps) {
   return (
-    <div className="m-2 ">
-      <div className="max-w-md">
-        <img className="w-32" src="/sheikh.png" alt="" />
-        <audio className="mt-2" key={index} src={radio.url} controls></audio>
-      </div>
+    <div className="mt-12">
+      <img className="w-64" src="/sheikh.png" alt="" />
+      <audio className="mt-2 w-64" key={index} src={radio.url} controls></audio>
     </div>
   );
 }
