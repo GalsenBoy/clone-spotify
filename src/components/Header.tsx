@@ -30,7 +30,7 @@ export default function Header() {
       style={{ gridRow: "-3/-1" }}
       className="  bg-black px-6 pb-6 my-2 mr-2 rounded-md w-full overflow-auto"
     >
-      <div className="flex justify-between z-10 sticky top-0 bg-black pt-6">
+      <div className="flex justify-between z-10 sticky top-0 bg-black py-6">
         <div className="flex gap-2">
           {chevronData.map((item, index) => (
             <Icon
