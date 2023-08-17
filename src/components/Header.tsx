@@ -30,7 +30,7 @@ export default function Header() {
       style={{ gridRow: "-3/-1" }}
       className="  bg-black px-6 pb-6 my-2 mr-2 rounded-md w-full overflow-auto"
     >
-      <div className="flex justify-between sticky top-0 bg-black pt-6">
+      <div className="flex justify-between z-10 sticky top-0 bg-black pt-6">
         <div className="flex gap-2">
           {chevronData.map((item, index) => (
             <Icon
@@ -50,9 +50,11 @@ export default function Header() {
           />
         </div>
       </div>
-      <div className="text-white">
+      <div className="text-white grid grid-cols-3 gap-3">
         {coran.radios.map((radio, index) => (
-          <DisplayCoran radio={radio} index={index} />
+          <div className="flex">
+            <DisplayCoran radio={radio} index={index} />
+          </div>
         ))}
       </div>
     </header>
