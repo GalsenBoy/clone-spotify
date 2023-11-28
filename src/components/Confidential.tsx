@@ -8,7 +8,7 @@ export default function Confidential() {
       <div className="mt-4 text-xs">
         <Link className="text-gray" content="cookies" to="/co" />
       </div>
-      <div className="flex border w-fit space-x-1 mt-5 font-bold rounded-full px-3 py-1">
+      <div className="flex border w-fit space-x-1 mt-5 font-bold rounded-full border-gray px-3 py-1">
         <Icon name="Globe" color="white" size={20} />
         <Button content="Français" className="text-sm" />
       </div>
