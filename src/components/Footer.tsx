@@ -14,7 +14,7 @@ export default function Footer() {
         </p>
       </div>
       <Button
-        className="bg-white text-black px-10 py-3 rounded-full"
+        className="bg-white text-black px-7 py-3 rounded-full"
         content="S'inscrire gratuitement"
       />
     </footer>
