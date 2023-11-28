@@ -14,7 +14,7 @@ export default function Library() {
           <Icon name="Plus" color="gray" size={24} />
         </div>
       </div>
-      <div className="h-49 overflow-auto mt-3 2xl:h-auto px-2 text-white">
+      <div className="h-49 overflow-auto mt-3 3xl:h-auto px-2 text-white">
         {libraryData.map((item, index) => (
           <Discover
             key={index}
