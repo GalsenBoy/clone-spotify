@@ -38,12 +38,12 @@ export default function Header() {
               className=" rounded-full bg-blackIcon"
               name={item.name}
               size={24}
-              color={"red"}
+              color={"gray"}
             />
           ))}
         </div>
         <div className="space-x-6">
-          <Button content="S'inscrire" />
+          <Button className="text-gray" content="S'inscrire" />
           <Button
             content="Se connecter"
             className="text-black bg-white py-2 px-5 rounded-full"
