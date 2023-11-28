@@ -7,14 +7,14 @@ export default function Library() {
     <section className=" bg-black ">
       <div className="flex justify-between p-5">
         <div className="flex gap-2">
-          <Icon name="Library" color="red" size={24} />
+          <Icon name="Library" color="gray" size={24} />
           <span>Bibliothèque</span>
         </div>
         <div>
-          <Icon name="Plus" color="red" size={24} />
+          <Icon name="Plus" color="gray" size={24} />
         </div>
       </div>
-      <div className="h-49 overflow-auto mt-3">
+      <div className="h-49 overflow-auto mt-3 xl:h-auto px-2">
         {libraryData.map((item, index) => (
           <Discover
             key={index}

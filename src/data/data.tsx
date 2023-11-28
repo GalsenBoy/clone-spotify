@@ -7,38 +7,17 @@ const chevronData = [
   },
 ];
 
-const configData = [
-  {
-    content: "Légal",
-    to: "/legal",
-    secondContent: "Centre de confidentialité",
-    secondTo: "/center",
-  },
-  {
-    content: "Protection des données",
-    to: "/protection",
-    secondContent: "Paramètres des cookies",
-    secondTo: "/cookie",
-  },
-  {
-    content: "A propos des pubs",
-    to: "/about",
-    secondContent: "Accessibilité",
-    secondTo: "/access",
-  },
-];
-
 const exploreData = [
   {
     name: "Home",
-    color: "red",
+    color: "gray",
     size: 24,
     to: "/home",
     content: "Accueil",
   },
   {
     name: "Search",
-    color: "red",
+    color: "gray",
     size: 24,
     to: "/search",
     content: "Rechercher",
@@ -60,4 +39,4 @@ const libraryData = [
   },
 ];
 
-export { libraryData, exploreData, chevronData, configData };
+export { libraryData, exploreData, chevronData };

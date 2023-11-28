@@ -9,14 +9,12 @@ export default {
       height: {
         '49': '12.5rem',
       },
-      fontFamily: {
-        circular: ['"Circular"', 'sans-serif'],
-      },
     },
     colors: {
       'black': '#121212',
       'white': '#f6f6f6',
       'gray-light' : '#242424',
+      'gray':"#b3b3b3", //b3b3b3
       'dark' :'#000000',
       'indigo':"#6366F1",
       'purple':"#A855F7",
