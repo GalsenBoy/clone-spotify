@@ -1,8 +1,33 @@
 import Button from "../composable/Button";
 import Icon from "../composable/Icon";
+import Link from "../composable/Links";
 import { chevronData } from "../data/data";
+import { useState, useEffect } from "react";
 
 export default function TopHeader() {
+  const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  const redirectUri = import.meta.env.VITE_URI;
+  const authEndpoint = import.meta.env.VITE_AUTH_ENDPOINT;
+  const responseType = "token";
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const hash = window.location.hash;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let token: any = window.localStorage.getItem("token");
+
+    if (!token && hash) {
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((e) => e.startsWith("access_token"))
+        ?.split("=")[1];
+      window.location.hash = "";
+      window.localStorage.setItem("token", token);
+      setToken(token);
+    }
+  }, []);
   return (
     <>
       <div className="flex justify-between items-center z-10 sticky top-0 bg-black py-6">
@@ -18,11 +43,18 @@ export default function TopHeader() {
           ))}
         </div>
         <div className="space-x-6">
-          <Button className="text-gray" content="S'inscrire" />
-          <Button
-            content="Se connecter"
-            className="text-black bg-white py-3 px-5 rounded-full"
-          />
+          {!token ? (
+            <>
+              <Button className="text-gray" content="S'inscrire" />
+              <Link
+                content="Se connecter"
+                to={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}`}
+                className="text-black bg-white py-3 px-5 rounded-full"
+              />{" "}
+            </>
+          ) : (
+            <Button content="Se déconnecter" />
+          )}
         </div>
       </div>
     </>

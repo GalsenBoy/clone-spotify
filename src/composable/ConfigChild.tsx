@@ -13,7 +13,7 @@ export default function ConfigChild({
   secondTo,
 }: ConfigChildProps) {
   return (
-    <div className="text-xs flex gap-4 mt-4">
+    <div className="text-xs flex gap-4 mt-4 text-gray">
       <Link content={content} to={to} />
       <Link content={secondContent} to={secondTo} />
     </div>
