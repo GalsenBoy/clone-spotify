@@ -38,5 +38,25 @@ const libraryData = [
     className: "my-5",
   },
 ];
+const configData = [
+  {
+    content: "Légal",
+    to: "/legal",
+    secondContent: "Centre de confidentialité",
+    secondTo: "/center",
+  },
+  {
+    content: "Protection des données",
+    to: "/protection",
+    secondContent: "Paramètres des cookies",
+    secondTo: "/cookie",
+  },
+  {
+    content: "A propos des pubs",
+    to: "/about",
+    secondContent: "Accessibilité",
+    secondTo: "/access",
+  },
+];
 
-export { libraryData, exploreData, chevronData };
+export { libraryData, exploreData, chevronData,configData };

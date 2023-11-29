@@ -9,8 +9,8 @@ export default function Explore() {
       <div className="flex items-center ">
         <img className="w-7" src="/spotify.svg" alt="" /> <span>Spotify</span>
       </div>
-      {exploreData.map((item) => (
-        <div className="flex gap-5 py-2 text-gray">
+      {exploreData.map((item,key) => (
+        <div key={key} className="flex gap-5 py-2 text-gray">
           <Icon name={item.name} color={item.color} size={item.size} />
           <Link to={item.to} content={item.content} />
         </div>
