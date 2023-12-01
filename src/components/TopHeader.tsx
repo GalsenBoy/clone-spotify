@@ -25,9 +25,14 @@ export default function TopHeader() {
         ?.split("=")[1];
       window.location.hash = "";
       window.localStorage.setItem("token", token);
-      setToken(token);
     }
+    setToken(token);
   }, []);
+
+  const logout = () => {
+    setToken("");
+    window.localStorage.removeItem("token");
+  };
   return (
     <>
       <div className="flex justify-between items-center z-10 sticky top-0 bg-black py-6">
@@ -53,7 +58,7 @@ export default function TopHeader() {
               />{" "}
             </>
           ) : (
-            <Button content="Se déconnecter" />
+            <Button onclick={logout} content="Se déconnecter" />
           )}
         </div>
       </div>
