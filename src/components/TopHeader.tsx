@@ -12,6 +12,7 @@ export default function TopHeader() {
   const authEndpoint = import.meta.env.VITE_AUTH_ENDPOINT;
   const responseType = "token";
   const [token, setToken] = useState("");
+  //
   const [albums, setAlbums] = useState<IAlbums[]>([]);
 
   const getAlbums = async () => {
