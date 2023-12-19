@@ -12,7 +12,7 @@ export default function TopHeader() {
   const authEndpoint = import.meta.env.VITE_AUTH_ENDPOINT;
   const responseType = "token";
   const [token, setToken] = useState("");
-  //
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [albums, setAlbums] = useState<IAlbums[]>([]);
 
   const getAlbums = async () => {
