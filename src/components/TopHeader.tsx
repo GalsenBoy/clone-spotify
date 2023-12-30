@@ -3,15 +3,34 @@ import Icon from "../composable/Icon";
 import Link from "../composable/Links";
 import { chevronData } from "../data/data";
 import { useState, useEffect } from "react";
-// import axios from "axios";
-// import IAlbums from "../interfaces/Albums";
-
+import axios from "axios";
+import IAlbums from "../interfaces/IAlbums";
 export default function TopHeader() {
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   const redirectUri = import.meta.env.VITE_URI;
   const authEndpoint = import.meta.env.VITE_AUTH_ENDPOINT;
   const responseType = "token";
   const [token, setToken] = useState("");
+  const [albums, setAlbums] = useState<IAlbums[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const _getAlbums = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.spotify.com/v1/albums?ids=382ObEPsp2rxGrnsizN5TX%2C1A2GTWGtFfWp7KSQTwWOyo%2C2noRn2Aes5aoNVsU6iWThc",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data.albums);
+      setAlbums(response.data.albums);
+      setIsLoading(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   // const [albums, setAlbums] = useState<IAlbums[]>([]);
 
   // const getAlbums = async () => {
@@ -47,7 +66,7 @@ export default function TopHeader() {
       window.localStorage.setItem("token", token);
     }
     setToken(token);
-    // getAlbums();
+    _getAlbums();
   }, []);
 
   const logout = () => {
@@ -82,6 +101,20 @@ export default function TopHeader() {
             <Button onclick={logout} content="Se déconnecter" />
           )}
         </div>
+      </div>
+      <div>
+        <hr />
+        {isLoading && (
+          <div>
+            {albums?.map((album, key) => (
+              <div key={key}>
+                {album.artists.map((artist, index) => (
+                  <p key={index}>{artist.name}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );

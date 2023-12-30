@@ -6,7 +6,7 @@ import { configData } from "../data/data";
 
 export default function Confidential() {
   return (
-    <div className="p-6 bg-black h-72 rounded-b-md flex flex-col justify-end">
+    <div className="p-6 bg-black rounded-b-md flex flex-col justify-end">
       {configData.map((item, index) => (
         <ConfigChild
           key={index}
