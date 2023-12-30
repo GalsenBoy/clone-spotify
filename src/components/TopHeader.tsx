@@ -5,7 +5,6 @@ import { chevronData } from "../data/data";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import IAlbums from "../interfaces/IAlbums";
-
 export default function TopHeader() {
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   const redirectUri = import.meta.env.VITE_URI;
@@ -32,6 +31,24 @@ export default function TopHeader() {
       console.error(error);
     }
   };
+  // const [albums, setAlbums] = useState<IAlbums[]>([]);
+
+  // const getAlbums = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums",
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       }
+  //     );
+  //     console.log(response.data);
+  //     setAlbums(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -49,7 +66,7 @@ export default function TopHeader() {
       window.localStorage.setItem("token", token);
     }
     setToken(token);
-    getAlbums();
+    // getAlbums();
   }, []);
 
   const logout = () => {
