@@ -4,7 +4,7 @@ import Link from "../composable/Links";
 import { chevronData } from "../data/data";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import IAlbums from "../interfaces/Albums";
+import IAlbums from "../interfaces/IAlbums";
 
 export default function TopHeader() {
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
@@ -13,19 +13,21 @@ export default function TopHeader() {
   const responseType = "token";
   const [token, setToken] = useState("");
   const [albums, setAlbums] = useState<IAlbums[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getAlbums = async () => {
     try {
       const response = await axios.get(
-        "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums",
+        "https://api.spotify.com/v1/albums?ids=382ObEPsp2rxGrnsizN5TX%2C1A2GTWGtFfWp7KSQTwWOyo%2C2noRn2Aes5aoNVsU6iWThc",
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
-      console.log(response.data);
-      setAlbums(response.data);
+      console.log(response.data.albums);
+      setAlbums(response.data.albums);
+      setIsLoading(true);
     } catch (error) {
       console.error(error);
     }
@@ -82,6 +84,20 @@ export default function TopHeader() {
             <Button onclick={logout} content="Se déconnecter" />
           )}
         </div>
+      </div>
+      <div>
+        <hr />
+        {isLoading && (
+          <div>
+            {albums?.map((album, key) => (
+              <div key={key}>
+                {album.artists.map((artist, index) => (
+                  <p key={index}>{artist.name}</p>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );
