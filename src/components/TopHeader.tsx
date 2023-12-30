@@ -15,7 +15,7 @@ export default function TopHeader() {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const getAlbums = async () => {
+  const _getAlbums = async () => {
     try {
       const response = await axios.get(
         "https://api.spotify.com/v1/albums?ids=382ObEPsp2rxGrnsizN5TX%2C1A2GTWGtFfWp7KSQTwWOyo%2C2noRn2Aes5aoNVsU6iWThc",
@@ -49,7 +49,7 @@ export default function TopHeader() {
       window.localStorage.setItem("token", token);
     }
     setToken(token);
-    getAlbums();
+    _getAlbums();
   }, []);
 
   const logout = () => {
